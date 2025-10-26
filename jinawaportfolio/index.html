@@ -1,0 +1,2803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from emmanuelportfolio-olive.vercel.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Dec 2024 17:43:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titus Jinawa-Dev Portfolio</title>
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <meta name="description" content="Jinawa Titus Torhile - Full Stack Developer Portfolio">
+    <meta name="keywords" content="web developer, full stack, react, nodejs, portfolio">
+    <meta property="og:title" content="Jinawa Titus Torhile - Portfolio">
+    <meta property="og:description" content="Full Stack Developer specializing in modern web technologies">
+    <meta property="og:image" content="path-to-preview-image.jpg">
+
+    <!-- Add Google Analytics or similar -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-ID"></script>
+
+    <style>
+        .gradient-text {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradient 5s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        .dark .glass-effect {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .animate-blink {
+            animation: blink 1s infinite;
+        }
+
+        .tech-icon {
+            animation: float 3s infinite ease-in-out;
+            transition: all 0.3s ease;
+        }
+
+        .tech-icon:hover {
+            transform: translateY(-20px) scale(1.1);
+            animation-play-state: paused;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .social-icon-hover:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+
+        .tooltip {
+            visibility: hidden;
+            position: absolute;
+            background: rgba(17, 24, 39, 0.95);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            width: max-content;
+            max-width: 250px;
+            transform: perspective(600px) rotateX(-10deg) translateY(20px);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 50;
+            transform-origin: right center;
+        }
+
+        .dark .tooltip {
+            background: rgba(255, 255, 255, 0.95);
+            color: rgb(17, 24, 39);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .tooltip::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: inherit;
+            background: linear-gradient(45deg,
+                    rgba(59, 130, 246, 0.1),
+                    rgba(139, 92, 246, 0.1),
+                    rgba(236, 72, 153, 0.1));
+            z-index: -1;
+            transition: opacity 0.4s ease;
+            opacity: 0;
+        }
+
+        .tooltip-container {
+            position: relative;
+        }
+
+        .tooltip-container:hover .tooltip {
+            visibility: visible;
+            transform: perspective(600px) rotateX(0deg) translateY(0);
+            opacity: 1;
+        }
+
+        .tooltip-container:hover .tooltip::before {
+            opacity: 1;
+        }
+
+        /* Enhanced tech icon animations */
+        .tech-icon {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .tech-icon>div {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .tooltip-container:hover .tech-icon>div {
+            transform: scale(1.15);
+            box-shadow:
+                0 0 0 4px rgba(59, 130, 246, 0.1),
+                0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Fancy tooltip content styling */
+        .tooltip-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .tooltip-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tooltip-list li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.25rem;
+            line-height: 1.4;
+        }
+
+        .tooltip-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+        }
+
+        .tech-icon {
+            z-index: 20;
+        }
+
+        /* Add these if you want staggered animations for tooltip content */
+        .tooltip-list li {
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .tooltip-container:hover .tooltip-list li {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .tooltip-container:hover .tooltip-list li:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .tooltip-container:hover .tooltip-list li:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .tooltip-container:hover .tooltip-list li:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        .tooltip-container:hover .tooltip-list li:nth-child(4) {
+            transition-delay: 0.4s;
+        }
+
+        /* Ensure the section takes full width */
+        #home {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            position: relative;
+        }
+
+        /* Adjust container padding for better mobile responsiveness */
+        @media (max-width: 640px) {
+            #home .w-full {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+
+        /* Left side tooltips (default) */
+        .tooltip-container .tooltip {
+            right: calc(100% + 1rem);
+            top: 50%;
+            transform: perspective(600px) rotateY(10deg) translateY(-50%) translateX(-20px);
+        }
+
+        .tooltip-container:hover .tooltip {
+            transform: perspective(600px) rotateY(0deg) translateY(-50%) translateX(0);
+        }
+
+        /* Right side tooltips */
+        .tooltip-container.tooltip-right .tooltip {
+            left: calc(100% + 1rem);
+            right: auto;
+            transform-origin: left center;
+            transform: perspective(600px) rotateY(-10deg) translateY(-50%) translateX(20px);
+        }
+
+        .tooltip-container.tooltip-right:hover .tooltip {
+            transform: perspective(600px) rotateY(0deg) translateY(-50%) translateX(0);
+        }
+
+        /* Fix horizontal scroll */
+        body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        #home {
+            width: 100%;
+            max-width: 100vw;
+            overflow: hidden;
+        }
+
+        @keyframes blob {
+            0% {
+                transform: translate(0px, 0px) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+
+            100% {
+                transform: translate(0px, 0px) scale(1);
+            }
+        }
+
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+
+        .skill-item {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.6s ease;
+        }
+
+        .group:hover .skill-item {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Add staggered delays for skill items */
+        .group:hover .skill-item:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .group:hover .skill-item:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .group:hover .skill-item:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        /* Gradient border animation */
+        .gradient-border {
+            background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+            background-size: 300% 300%;
+            animation: gradientBorder 12s ease infinite;
+        }
+
+        @keyframes gradientBorder {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Essential 3D flip animation styles */
+        .perspective {
+            perspective: 2000px;
+        }
+
+        .preserve-3d {
+            transform-style: preserve-3d;
+        }
+
+        .backface-hidden {
+            backface-visibility: hidden;
+        }
+
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+
+        /* Blob animation */
+        @keyframes blob {
+            0% {
+                transform: translate(0px, 0px) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+
+            100% {
+                transform: translate(0px, 0px) scale(1);
+            }
+        }
+
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+
+        /* Skill bar animation */
+        .skill-bar-container {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.6s ease;
+        }
+
+        .group:hover .skill-bar-container {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .group:hover .skill-bar-container:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .group:hover .skill-bar-container:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .group:hover .skill-bar-container:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        /* Neumorphism Shadows */
+        .shadow-neumorph {
+            box-shadow:
+                8px 8px 15px rgba(0, 0, 0, 0.1),
+                -8px -8px 15px rgba(255, 255, 255, 0.8);
+        }
+
+        .dark .shadow-neumorph-dark {
+            box-shadow:
+                8px 8px 15px rgba(0, 0, 0, 0.3),
+                -8px -8px 15px rgba(255, 255, 255, 0.05);
+        }
+
+        /* Blob Animation */
+        @keyframes blob {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            25% {
+                transform: translate(20px, -30px) scale(1.1);
+            }
+
+            50% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+
+            75% {
+                transform: translate(20px, 30px) scale(1.1);
+            }
+        }
+
+        .animate-blob {
+            animation: blob 15s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+
+        /* Skill Bar Animation */
+        @keyframes skill-bar {
+            from {
+                transform: scaleX(0);
+            }
+
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        .animate-skill-bar {
+            animation: skill-bar 1.5s ease-out forwards;
+        }
+
+        .animation-delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .animation-delay-400 {
+            animation-delay: 0.4s;
+        }
+
+        /* Hover Effects */
+        .group:hover .skill-item {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+
+        .rotate-y-6 {
+            transform: rotateY(6deg);
+        }
+
+        @keyframes blob {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            25% {
+                transform: translate(20px, -30px) scale(1.1);
+            }
+
+            50% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+
+            75% {
+                transform: translate(20px, 30px) scale(1.1);
+            }
+        }
+
+        .animate-blob {
+            animation: blob 15s infinite;
+        }
+
+        /* Skill tags */
+        .skill-tag {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: default;
+            color: #374151;
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+
+        .skill-tag:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-0.25rem);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .skill-tag {
+                color: #d1d5db;
+            }
+        }
+
+        /* 3D perspective */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+
+        .rotate-y-6 {
+            transform: rotateY(6deg);
+        }
+
+        /* 3D Card Styles */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+
+        .preserve-3d {
+            transform-style: preserve-3d;
+        }
+
+        .backface-hidden {
+            backface-visibility: hidden;
+        }
+
+        .rotate-y-12 {
+            transform: rotateY(12deg);
+        }
+
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+
+        /* Floating Animations */
+        @keyframes float-slow {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes float-delayed {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .animate-float-slow {
+            animation: float-slow 4s ease-in-out infinite;
+        }
+
+        .animate-float-delayed {
+            animation: float-delayed 4s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+
+        /* Gradient Animation */
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradient 6s linear infinite;
+        }
+
+        /* Particle Animation */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            animation: particle 10s linear infinite;
+        }
+
+        @keyframes particle {
+            0% {
+                transform: translate(0, 0);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(100px, -100px);
+                opacity: 0;
+            }
+        }
+
+        .particle:nth-child(1) {
+            top: 20%;
+            left: 20%;
+            animation-delay: 0s;
+        }
+
+        .particle:nth-child(2) {
+            top: 50%;
+            left: 50%;
+            animation-delay: 2s;
+        }
+
+        .particle:nth-child(3) {
+            top: 80%;
+            left: 30%;
+            animation-delay: 4s;
+        }
+
+        .skill-bar-container {
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideIn 0.5s ease forwards;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .skill-bar-container:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .skill-bar-container:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .skill-bar-container:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .skill-bar-container:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .skill-bar-container:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .skill-bar-container:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .custom-scrollbar {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(139, 92, 246, 0.5) rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 3px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: rgba(139, 92, 246, 0.5);
+            border-radius: 3px;
+        }
+
+        .animate-spin-slow {
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes blob {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            25% {
+                transform: translate(20px, -30px) scale(1.1);
+            }
+
+            50% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+
+            75% {
+                transform: translate(20px, 30px) scale(1.1);
+            }
+        }
+
+        .animate-blob {
+            animation: blob 15s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animate-spin-slow {
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate-skill-bar {
+            animation: skillBar 1.5s ease forwards;
+        }
+
+        @keyframes skillBar {
+            0% {
+                transform: scaleX(0);
+            }
+
+            100% {
+                transform: scaleX(1);
+            }
+        }
+
+        .animation-delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .animation-delay-400 {
+            animation-delay: 0.4s;
+        }
+
+        .animation-delay-600 {
+            animation-delay: 0.6s;
+        }
+
+        .animation-delay-800 {
+            animation-delay: 0.8s;
+        }
+
+        .animation-delay-1000 {
+            animation-delay: 1s;
+        }
+
+        .skill-icon-container {
+            position: relative;
+        }
+
+        .skill-icon-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at var(--mouse-x) var(--mouse-y),
+                    rgba(255, 255, 255, 0.1) 0%,
+                    rgba(255, 255, 255, 0) 50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            border-radius: 0.75rem;
+        }
+
+        .skill-icon-container:hover::after {
+            opacity: 1;
+        }
+
+        /* Modal animations */
+        #progressModal.active {
+            display: flex;
+        }
+
+        #progressModal.active .modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .skill-card {
+            transform: perspective(1000px) rotateX(0deg);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: perspective(1000px) rotateX(10deg) translateY(-5px);
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                    rgba(255, 255, 255, 0.1) 0%,
+                    rgba(255, 255, 255, 0) 50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            border-radius: inherit;
+        }
+
+        .skill-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes skillBarFill {
+            from {
+                transform: scaleX(0);
+            }
+
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        .animate-skill-bar {
+            animation: skillBarFill 1s ease-out forwards;
+        }
+
+        .skill-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .skill-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .skill-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        /* ... continue for other cards ... */
+
+        /* Entry Animation */
+        @keyframes cardEntry {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Shake Animation */
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: translateX(-2px);
+            }
+
+            20%,
+            40%,
+            60%,
+            80% {
+                transform: translateX(2px);
+            }
+        }
+
+        .animate-card-entry {
+            opacity: 0;
+            animation: cardEntry 0.5s ease-out forwards;
+            animation-delay: var(--delay);
+        }
+
+        .hover\:shake:hover {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        /* Prevent animation on reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            .animate-card-entry {
+                animation: none;
+                opacity: 1;
+            }
+
+            .hover\:shake:hover {
+                animation: none;
+            }
+        }
+
+        /* Mobile Menu Animations */
+        .mobile-menu-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        #mobileMenu.active .mobile-menu-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #mobileMenu.active .mobile-menu-item:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        #mobileMenu.active .mobile-menu-item:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        #mobileMenu.active .mobile-menu-item:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .skill-card {
+                width: 100%;
+            }
+
+            .project-card {
+                width: 100%;
+            }
+
+            .contact-form {
+                width: 90%;
+            }
+
+            /* Adjust hero section for mobile */
+            #home .flex-col-reverse {
+                padding-top: 2rem;
+            }
+
+            /* Adjust tech stack icons positioning */
+            .tech-icon {
+                transform: scale(0.8);
+            }
+
+            /* Improve tooltip positioning */
+            .tooltip {
+                width: auto;
+                max-width: 200px;
+            }
+        }
+
+        /* Additional responsive typography */
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Mobile Menu Styles */
+        #mobileMenu {
+            transition: opacity 0.3s ease;
+        }
+
+        #mobileMenu.hidden {
+            display: none;
+        }
+
+        #mobileMenu.flex {
+            display: flex;
+        }
+
+        .mobile-menu-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        /* Ensure mobile menu is above other content */
+        .z-50 {
+            z-index: 50;
+        }
+
+        /* Mobile menu overlay background */
+        .bg-gray-900\/95 {
+            background-color: rgba(17, 24, 39, 0.95);
+        }
+
+        /* Mobile menu backdrop blur */
+        .backdrop-blur-sm {
+            backdrop-filter: blur(4px);
+        }
+
+        /* Mobile menu item hover effect */
+        .mobile-menu-item:hover {
+            color: #60A5FA;
+            /* or your primary color */
+        }
+
+        /* Prevent body scroll when menu is open */
+        body.overflow-hidden {
+            overflow: hidden;
+        }
+
+        /* Additional mobile menu animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        #mobileMenu.active {
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        .mobile-menu-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        #mobileMenu.active .mobile-menu-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #mobileMenu.active .mobile-menu-item:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        #mobileMenu.active .mobile-menu-item:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        #mobileMenu.active .mobile-menu-item:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        /* Add responsive adjustments for the navigation */
+        @media (max-width: 640px) {
+            .nav-container {
+                padding: 0.5rem;
+            }
+
+            .flex.items-center.space-x-1 {
+                gap: 0.25rem;
+                /* Reduce spacing on mobile */
+            }
+
+            .flex.items-center.space-x-1 a {
+                padding: 0.5rem 1rem;
+                /* Smaller padding on mobile */
+                font-size: 0.875rem;
+                /* Slightly smaller font on mobile */
+            }
+        }
+
+        /* Blob Animation */
+        @keyframes blob {
+            0% {
+                transform: translate(0px, 0px) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+
+            100% {
+                transform: translate(0px, 0px) scale(1);
+            }
+        }
+
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+
+        /* Parallax Animation */
+        @keyframes parallax {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .animate-parallax {
+            animation: parallax 15s infinite alternate ease-in-out;
+        }
+
+        /* Text Reveal Animation */
+        @keyframes reveal {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-reveal {
+            animation: reveal 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Gradient Text Animation */
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .animate-gradient {
+            background-size: 200% auto;
+            animation: gradient 4s linear infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
+        <nav class="mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div class="backdrop-blur-md bg-white/[0.02] border border-white/[0.05] rounded-full 
+                        shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] p-2 max-w-7xl mx-auto">
+                <div class="flex items-center justify-between">
+                    <!-- Logo -->
+                    <a href="index.html" class="flex items-center space-x-2 group">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-500 to-purple-500 
+                                    flex items-center justify-center transform transition-all duration-300
+                                    group-hover:scale-110 group-hover:rotate-6">
+                            <span class="text-xl font-bold text-white">JT</span>
+                        </div>
+                        <span class="text-lg font-semibold bg-gradient-to-r from-blue-400 to-purple-500 
+                                    bg-clip-text text-transparent hidden sm:block">Jinawa</span>
+                    </a>
+
+                    <!-- Navigation Links -->
+                    <div class="flex items-center space-x-1">
+                        <div class="bg-white/[0.05] rounded-full p-1">
+                            <div class="flex items-center space-x-1">
+                                <a href="#about"
+                                    class="px-4 py-2 text-gray-300 hover:text-white rounded-full transition-colors duration-300 hover:bg-white/[0.1]">About</a>
+                                <a href="#projects"
+                                    class="px-4 py-2 text-gray-300 hover:text-white rounded-full transition-colors duration-300 hover:bg-white/[0.1]">Projects</a>
+                                <a href="#contact"
+                                    class="px-4 py-2 text-gray-300 hover:text-white rounded-full transition-colors duration-300 hover:bg-white/[0.1]">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <div class="flex items-center space-x-3">
+                        <button id="themeToggle" class="p-2 rounded-full hover:bg-white/[0.05] transition-all duration-300
+                                       relative overflow-hidden group">
+
+                            <div
+                                class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-purple-500/10 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Add margin-top to main content to account for fixed header -->
+    <main class="relative mt-16">
+        <!-- Hero Section -->
+        <section id="home"
+            class="min-h-screen relative overflow-hidden flex items-center justify-center w-full mt-24 md:mt-32">
+            <div id="particles-js" class="fixed inset-0"></div>
+
+            <div class="w-full px-6 relative z-10">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12 max-w-[90%] mx-auto">
+                    <!-- Left Content -->
+                    <div class="md:w-1/2" data-aos="fade-right">
+                        <div class="space-y-6">
+                            <!-- Greeting -->
+                            <div class="flex items-center gap-2">
+                                <div class="px-4 py-2 bg-blue-500/10 rounded-full">
+                                    <span class="text-blue-500 dark:text-blue-400">👋 Hello, I'm</span>
+                                </div>
+                            </div>
+
+                            <!-- Name -->
+                            <h1 class="text-5xl md:text-7xl font-bold space-y-3">
+                                <span class="text-gray-800 dark:text-white block">Jinawa</span>
+                                <span class="gradient-text block">Titus Torhile</span>
+                            </h1>
+
+                            <!-- Dynamic Title -->
+                            <div class="flex items-center gap-2 text-xl md:text-2xl text-gray-600 dark:text-gray-300">
+                                <span class="typing-text"></span>
+                                <span class="animate-blink">|</span>
+                            </div>
+
+                            <!-- Description -->
+                            <p class="text-gray-600 dark:text-gray-300 text-lg max-w-xl">
+                                Passionate software developer crafting beautiful and functional web experiences.
+                                Specialized in modern web technologies and creative problem-solving.
+                            </p>
+
+                            <!-- CTA Buttons -->
+                            <div class="flex flex-wrap gap-4 pt-4">
+                                <!-- Hire Me Button -->
+                                <a href="https://wa.link/0fhxiz" target="_blank" rel="noopener noreferrer"
+                                    class="group relative inline-flex items-center justify-center px-8 py-3 font-medium tracking-wide text-white transition-all duration-500 ease-in-out bg-gradient-to-r from-blue-500 to-purple-600 rounded-full overflow-hidden hover:scale-105">
+                                    <span
+                                        class="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-600 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"></span>
+                                    <span class="relative flex items-center gap-2">
+                                        Hire Me
+                                        <i class="fab fa-whatsapp"></i>
+                                        <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                        </svg>
+                                    </span>
+                                </a>
+
+                                <a href="#projects"
+                                    class="group relative inline-flex items-center justify-center px-8 py-3 font-medium tracking-wide transition-all duration-500 ease-in-out glass-effect rounded-full overflow-hidden hover:scale-105">
+                                    <span class="relative flex items-center gap-2 text-gray-800 dark:text-white">
+                                        View Projects
+                                        <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+
+                            <!-- Social Links -->
+                            <div class="flex items-center gap-4 pt-6">
+                                <a href="https://www.linkedin.com/in/jinawa-titus-torhile-b31178244/"
+                                    class="social-icon-hover" target="_blank" rel="noopener noreferrer">
+                                    <div
+                                        class="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 dark:bg-gray-800 hover:bg-blue-500 hover:text-white transition-all duration-300">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </div>
+                                </a>
+                                <a href="https://github.com/Jinawalic" class="social-icon-hover" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <div
+                                        class="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 dark:bg-gray-800 hover:bg-gray-900 hover:text-white transition-all duration-300">
+                                        <i class="fab fa-github"></i>
+                                    </div>
+                                </a>
+                                <a href="#" class="social-icon-hover">
+                                    <div
+                                        class="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 dark:bg-gray-800 hover:bg-blue-400 hover:text-white transition-all duration-300">
+                                        <i class="fab fa-twitter"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Content (Profile Image) -->
+                    <div class="md:w-1/2 relative" data-aos="fade-left">
+                        <div class="relative">
+                            <!-- Animated Background Elements -->
+                            <div class="absolute -inset-4">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-3xl opacity-20 animate-pulse">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-3xl opacity-20 animate-pulse delay-300">
+                                </div>
+                            </div>
+
+                            <!-- Decorative Elements -->
+                            <div
+                                class="absolute -top-8 -right-8 w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-xl opacity-40 animate-bounce delay-100">
+                            </div>
+                            <div
+                                class="absolute -bottom-8 -left-8 w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-xl opacity-40 animate-bounce">
+                            </div>
+
+                            <!-- Profile Image -->
+                            <img src="img/Profile.jpg" alt="Profile"
+                                class="relative rounded-full w-64 h-64 md:w-[400px] md:h-[450px] object-cover border-4 border-white dark:border-gray-800 shadow-2xl">
+
+                            <!-- Tech Stack Floating Icons -->
+                            <!-- React -->
+                            <div
+                                class="absolute top-0  left-0 -translate-x-1/2 -translate-y-1/2 tech-icon tooltip-container">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow-lg flex items-center justify-center">
+                                    <i class="fab fa-react text-blue-500 text-2xl"></i>
+                                </div>
+                                <div class="tooltip">
+                                    <div class="tooltip-title">React.js Expert</div>
+                                    <ul class="tooltip-list">
+                                        <li>Advanced state management with Redux & Context API</li>
+                                        <li>Custom hooks development</li>
+                                        <li>Performance optimization techniques</li>
+                                        <li>Next.js & Server-side rendering</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Node.js -->
+                            <div class="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 tech-icon tooltip-container"
+                                style="animation-delay: 0.5s;">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow-lg flex items-center justify-center">
+                                    <i class="fab fa-node-js text-green-500 text-2xl"></i>
+                                </div>
+                                <div class="tooltip">
+                                    Node.js: REST APIs, Express.js, authentication, database integration, and
+                                    microservices architecture.
+                                </div>
+                            </div>
+
+                            <!-- PHP -->
+                            <div class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 tech-icon tooltip-container"
+                                style="animation-delay: 1s;">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow-lg flex items-center justify-center">
+                                    <i class="fab fa-php text-indigo-500 text-2xl"></i>
+                                </div>
+                                <div class="tooltip">
+                                    PHP: Laravel framework, MVC architecture, Composer package management, and WordPress
+                                    development.
+                                </div>
+                            </div>
+
+                            <!-- HTML5 -->
+                            <div class="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 tech-icon tooltip-container"
+                                style="animation-delay: 1.5s;">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow-lg flex items-center justify-center">
+                                    <i class="fab fa-html5 text-orange-500 text-2xl"></i>
+                                </div>
+                                <div class="tooltip">
+                                    HTML5: Semantic markup, accessibility best practices, and modern web standards
+                                    compliance.
+                                </div>
+                            </div>
+
+                            <!-- CSS3 -->
+                            <div class="absolute top-1/2 -left-8 -translate-x-1/2 tech-icon tooltip-container"
+                                style="animation-delay: 2s;">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow-lg flex items-center justify-center">
+                                    <i class="fab fa-css3-alt text-blue-500 text-2xl"></i>
+                                </div>
+                                <div class="tooltip">
+                                    CSS3: Flexbox, Grid, animations, responsive design, and Sass/SCSS preprocessing.
+                                </div>
+                            </div>
+
+                            <!-- Bootstrap -->
+                            <div class="absolute top-1/2 -right-8 translate-x-1/2 tech-icon tooltip-container"
+                                style="animation-delay: 2.5s;">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow-lg flex items-center justify-center">
+                                    <i class="fab fa-bootstrap text-purple-500 text-2xl"></i>
+                                </div>
+                                <div class="tooltip">
+                                    Bootstrap: Responsive layouts, component customization, and theme development.
+                                </div>
+                            </div>
+
+                            <!-- MySQL -->
+                            <div class="absolute top-1/4 -right-12 translate-x-1/2 tech-icon tooltip-container"
+                                style="animation-delay: 3s;">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow-lg flex items-center justify-center">
+                                    <img src="www.mysql.com/common/logos/logo-mysql-170x115.png" alt="MySQL"
+                                        class="w-6 h-6">
+                                </div>
+                                <div class="tooltip">
+                                    MySQL: Database design, optimization, stored procedures, and complex queries.
+                                </div>
+                            </div>
+
+                            <!-- Add Tailwind CSS icon -->
+                            <div class="absolute top-1/4 -left-12 -translate-x-1/2 tech-icon tooltip-container"
+                                style="animation-delay: 3.5s;">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                                        <path fill="#38BDF8"
+                                            d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                                    </svg>
+                                </div>
+                                <div class="tooltip">
+                                    <div class="tooltip-title">Tailwind CSS Master</div>
+                                    <ul class="tooltip-list">
+                                        <li>Custom Configuration</li>
+                                        <li>Responsive Design</li>
+                                        <li>Component Styling</li>
+                                        <li>Utility-First Workflow</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- About Me Section -->
+        <section id="about" class="min-h-screen py-24 relative overflow-hidden bg-transparent">
+            <!-- Animated Background Elements -->
+            <div class="absolute inset-0">
+                <div
+                    class="absolute w-[500px] h-[500px] -left-20 -top-20 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-full filter blur-3xl animate-pulse">
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+                <!-- Main Card -->
+                <div class="bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
+                    <!-- Header Section -->
+                    <div class="relative p-8 border-b border-white/10">
+                        <h2
+                            class="text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
+                            About Me
+                        </h2>
+                        <div class="h-1 w-32 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+                    </div>
+
+                    <!-- Content Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 p-8">
+                        <!-- Main Content -->
+                        <div class="lg:col-span-2 space-y-6" data-aos="fade-right">
+                            <div class="prose prose-lg dark:prose-invert">
+                                <p class="text-gray-300 leading-relaxed text-lg">
+                                    Hello! I'm <span
+                                        class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Jinawa
+                                        Titus Torhile</span>,
+                                    a passionate Full Stack Developer with a creative mindset and a determination to
+                                    solve complex problems.
+                                    With over 3 years of experience, I've developed a keen eye for detail and a love for
+                                    creating elegant, efficient solutions.
+                                </p>
+
+                                <p class="text-gray-300 leading-relaxed">
+                                    My journey in web development started with curiosity and has evolved into expertise.
+                                    I specialize in building responsive
+                                    web applications that provide exceptional user experiences while maintaining robust
+                                    backend functionality.
+                                </p>
+
+                                <p class="text-gray-300 leading-relaxed">
+                                    What sets me apart is my holistic approach to development. I don't just write code;
+                                    I create solutions that align with
+                                    business objectives and user needs. My experience spans from startups to established
+                                    companies, giving me a versatile
+                                    perspective on different development environments.
+                                </p>
+                            </div>
+
+                            <!-- Add this in the About section, after your description -->
+                            <div class="mt-8">
+                                <a href="assets/JINAWA RESUME.pdf" download
+                                    class="group inline-flex items-center justify-center px-6 py-3 font-medium text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-full overflow-hidden hover:scale-105 transition-all duration-300">
+                                    <span class="flex items-center gap-2">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                        </svg>
+                                        Download Resume
+                                    </span>
+                                </a>
+                            </div>
+
+                            <!-- Quote Card -->
+                            <div class="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10">
+                                <blockquote class="text-gray-300 italic">
+                                    "Crafting digital experiences that combine creativity with technical excellence."
+                                </blockquote>
+                            </div>
+                        </div>
+
+
+
+                        <!-- Skills Column -->
+                        <div class="space-y-8" data-aos="fade-left">
+                            <!-- Personal Skills -->
+                            <div class="space-y-4">
+                                <h3
+                                    class="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                                    Personal Skills
+                                </h3>
+                                <div class="grid grid-cols-1 gap-2">
+                                    <!-- Problem Solving -->
+                                    <div class="group animate-card-entry" style="--delay: 100ms">
+                                        <div class="bg-white/5 backdrop-blur-sm rounded-lg px-4 py-2.5 border border-white/10 
+                                                    hover:bg-white/10 transition-all duration-300 hover:shake">
+                                            <div class="flex items-center justify-between">
+                                                <span
+                                                    class="text-sm font-bold text-gray-300 group-hover:text-purple-400 transition-colors">Problem
+                                                    Solving</span>
+                                                <span
+                                                    class="text-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <i class="fas fa-check text-xs"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Communication -->
+                                    <div class="group animate-card-entry" style="--delay: 150ms">
+                                        <div class="bg-white/5 backdrop-blur-sm rounded-lg px-4 py-2.5 border border-white/10 
+                                                    hover:bg-white/10 transition-all duration-300 hover:shake">
+                                            <div class="flex items-center justify-between">
+                                                <span
+                                                    class="text-sm font-bold text-gray-300 group-hover:text-purple-400 transition-colors">Communication</span>
+                                                <span
+                                                    class="text-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <i class="fas fa-check text-xs"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Team Leadership -->
+                                    <div class="group animate-card-entry" style="--delay: 200ms">
+                                        <div class="bg-white/5 backdrop-blur-sm rounded-lg px-4 py-2.5 border border-white/10 
+                                                    hover:bg-white/10 transition-all duration-300 hover:shake">
+                                            <div class="flex items-center justify-between">
+                                                <span
+                                                    class="text-sm font-bold text-gray-300 group-hover:text-purple-400 transition-colors">Team
+                                                    Leadership</span>
+                                                <span
+                                                    class="text-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <i class="fas fa-check text-xs"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Time Management -->
+                                    <div class="group animate-card-entry" style="--delay: 250ms">
+                                        <div class="bg-white/5 backdrop-blur-sm rounded-lg px-4 py-2.5 border border-white/10 
+                                                    hover:bg-white/10 transition-all duration-300 hover:shake">
+                                            <div class="flex items-center justify-between">
+                                                <span
+                                                    class="text-sm font-bold text-gray-300 group-hover:text-purple-400 transition-colors">Time
+                                                    Management</span>
+                                                <span
+                                                    class="text-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <i class="fas fa-check text-xs"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Adaptability -->
+                                    <div class="group animate-card-entry" style="--delay: 300ms">
+                                        <div class="bg-white/5 backdrop-blur-sm rounded-lg px-4 py-2.5 border border-white/10 
+                                                    hover:bg-white/10 transition-all duration-300 hover:shake">
+                                            <div class="flex items-center justify-between">
+                                                <span
+                                                    class="text-sm font-bold text-gray-300 group-hover:text-purple-400 transition-colors">Adaptability</span>
+                                                <span
+                                                    class="text-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <i class="fas fa-check text-xs"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Creativity -->
+                                    <div class="group animate-card-entry" style="--delay: 350ms">
+                                        <div class="bg-white/5 backdrop-blur-sm rounded-lg px-4 py-2.5 border border-white/10 
+                                                    hover:bg-white/10 transition-all duration-300 hover:shake">
+                                            <div class="flex items-center justify-between">
+                                                <span
+                                                    class="text-sm font-bold text-gray-300 group-hover:text-purple-400 transition-colors">Creativity</span>
+                                                <span
+                                                    class="text-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <i class="fas fa-check text-xs"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Critical Thinking -->
+                                    <div class="group animate-card-entry" style="--delay: 400ms">
+                                        <div class="bg-white/5 backdrop-blur-sm rounded-lg px-4 py-2.5 border border-white/10 
+                                                    hover:bg-white/10 transition-all duration-300 hover:shake">
+                                            <div class="flex items-center justify-between">
+                                                <span
+                                                    class="text-sm font-bold text-gray-300 group-hover:text-purple-400 transition-colors">Critical
+                                                    Thinking</span>
+                                                <span
+                                                    class="text-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <i class="fas fa-check text-xs"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Attention to Detail -->
+                                    <div class="group animate-card-entry" style="--delay: 450ms">
+                                        <div class="bg-white/5 backdrop-blur-sm rounded-lg px-4 py-2.5 border border-white/10 
+                                                    hover:bg-white/10 transition-all duration-300 hover:shake">
+                                            <div class="flex items-center justify-between">
+                                                <span
+                                                    class="text-sm font-bold text-gray-300 group-hover:text-purple-400 transition-colors">Attention
+                                                    to Detail</span>
+                                                <span
+                                                    class="text-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <i class="fas fa-check text-xs"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="min-h-screen py-24 relative overflow-hidden">
+            <!-- Background Effects -->
+            <div class="absolute inset-0">
+                <div
+                    class="absolute w-[800px] h-[800px] -left-40 -top-40 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-full filter blur-3xl animate-blob">
+                </div>
+                <div
+                    class="absolute w-[600px] h-[600px] right-0 top-1/2 bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-orange-500/10 rounded-full filter blur-3xl animate-blob animation-delay-2000">
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 space-y-16">
+                <!-- Technical Skills Section -->
+                <div class="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-2xl">
+                    <div class="text-center mb-12">
+                        <span
+                            class="px-4 py-2 rounded-full text-sm font-medium bg-blue-500/10 text-blue-400 inline-block mb-4">
+                            Development Expertise
+                        </span>
+                        <h2
+                            class="text-4xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
+                            Technical Skills
+                        </h2>
+                    </div>
+
+                    <!-- Technical Skills Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <!-- HTML5 -->
+                        <div class="skill-card group" data-aos="zoom-in-up" data-aos-duration="800"
+                            data-aos-delay="100">
+                            <!-- Add hover animations -->
+                            <div class="transform transition-all duration-300 hover:scale-105 hover:rotate-3">
+                                <div
+                                    class="relative bg-white/5 backdrop-blur-lg rounded-lg p-4 border border-white/10 hover:border-orange-500/50 transition-all duration-300 overflow-hidden">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    </div>
+                                    <div class="relative z-10 flex flex-col items-center">
+                                        <i
+                                            class="fab fa-html5 text-3xl text-orange-400 mb-2 transform group-hover:scale-110 transition-transform duration-300"></i>
+                                        <h3 class="text-sm font-semibold text-gray-200 mb-2">HTML5</h3>
+                                        <div class="w-full bg-gray-700/50 h-1.5 rounded-full overflow-hidden">
+                                            <div
+                                                class="h-full bg-gradient-to-r from-orange-400 to-orange-600 w-[95%] transform origin-left scale-x-0 animate-skill-bar">
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-gray-400 mt-1">95%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CSS3 -->
+                        <div class="skill-card group" data-aos="zoom-in" data-aos-delay="150">
+                            <div
+                                class="relative bg-white/5 backdrop-blur-lg rounded-lg p-4 border border-white/10 hover:border-blue-500/50 transition-all duration-300 overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <div class="relative z-10 flex flex-col items-center">
+                                    <i
+                                        class="fab fa-css3-alt text-3xl text-blue-400 mb-2 transform group-hover:scale-110 transition-transform duration-300"></i>
+                                    <h3 class="text-sm font-semibold text-gray-200 mb-2">CSS3</h3>
+                                    <div class="w-full bg-gray-700/50 h-1.5 rounded-full overflow-hidden">
+                                        <div
+                                            class="h-full bg-gradient-to-r from-blue-400 to-blue-600 w-[90%] transform origin-left scale-x-0 animate-skill-bar">
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-gray-400 mt-1">90%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- JavaScript -->
+                        <div class="skill-card group" data-aos="zoom-in" data-aos-delay="200">
+                            <div
+                                class="relative bg-white/5 backdrop-blur-lg rounded-lg p-4 border border-white/10 hover:border-yellow-500/50 transition-all duration-300 overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-amber-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <div class="relative z-10 flex flex-col items-center">
+                                    <i
+                                        class="fab fa-js text-3xl text-yellow-400 mb-2 transform group-hover:scale-110 transition-transform duration-300"></i>
+                                    <h3 class="text-sm font-semibold text-gray-200 mb-2">JavaScript</h3>
+                                    <div class="w-full bg-gray-700/50 h-1.5 rounded-full overflow-hidden">
+                                        <div
+                                            class="h-full bg-gradient-to-r from-yellow-400 to-yellow-600 w-[85%] transform origin-left scale-x-0 animate-skill-bar">
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-gray-400 mt-1">85%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- React -->
+                        <div class="skill-card group" data-aos="zoom-in" data-aos-delay="250">
+                            <div
+                                class="relative bg-white/5 backdrop-blur-lg rounded-lg p-4 border border-white/10 hover:border-cyan-500/50 transition-all duration-300 overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <div class="relative z-10 flex flex-col items-center">
+                                    <i
+                                        class="fab fa-react text-3xl text-cyan-400 mb-2 transform group-hover:scale-110 transition-transform duration-300 animate-spin-slow"></i>
+                                    <h3 class="text-sm font-semibold text-gray-200 mb-2">React</h3>
+                                    <div class="w-full bg-gray-700/50 h-1.5 rounded-full overflow-hidden">
+                                        <div
+                                            class="h-full bg-gradient-to-r from-cyan-400 to-cyan-600 w-[80%] transform origin-left scale-x-0 animate-skill-bar">
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-gray-400 mt-1">80%</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- PHP -->
+                        <div class="skill-card group" data-aos="zoom-in" data-aos-delay="350">
+                            <div
+                                class="relative bg-white/5 backdrop-blur-lg rounded-lg p-4 border border-white/10 hover:border-indigo-500/50 transition-all duration-300 overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <div class="relative z-10 flex flex-col items-center">
+                                    <i
+                                        class="fab fa-php text-3xl text-indigo-400 mb-2 transform group-hover:scale-110 transition-transform duration-300"></i>
+                                    <h3 class="text-sm font-semibold text-gray-200 mb-2">PHP</h3>
+                                    <div class="w-full bg-gray-700/50 h-1.5 rounded-full overflow-hidden">
+                                        <div
+                                            class="h-full bg-gradient-to-r from-indigo-400 to-indigo-600 w-[80%] transform origin-left scale-x-0 animate-skill-bar">
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-gray-400 mt-1">80%</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- MySQL -->
+                        <div class="skill-card group" data-aos="zoom-in" data-aos-delay="450">
+                            <div
+                                class="relative bg-white/5 backdrop-blur-lg rounded-lg p-4 border border-white/10 hover:border-orange-500/50 transition-all duration-300 overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <div class="relative z-10 flex flex-col items-center">
+                                    <i
+                                        class="fas fa-database text-3xl text-orange-400 mb-2 transform group-hover:scale-110 transition-transform duration-300"></i>
+                                    <h3 class="text-sm font-semibold text-gray-200 mb-2">MySQL</h3>
+                                    <div class="w-full bg-gray-700/50 h-1.5 rounded-full overflow-hidden">
+                                        <div
+                                            class="h-full bg-gradient-to-r from-orange-400 to-blue-400 w-[85%] transform origin-left scale-x-0 animate-skill-bar">
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-gray-400 mt-1">85%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MongoDB -->
+                        <div class="skill-card group" data-aos="zoom-in" data-aos-delay="500">
+                            <div
+                                class="relative bg-white/5 backdrop-blur-lg rounded-lg p-4 border border-white/10 hover:border-green-500/50 transition-all duration-300 overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <div class="relative z-10 flex flex-col items-center">
+                                    <i
+                                        class="fas fa-leaf text-3xl text-green-400 mb-2 transform group-hover:scale-110 transition-transform duration-300"></i>
+                                    <h3 class="text-sm font-semibold text-gray-200 mb-2">MongoDB</h3>
+                                    <div class="w-full bg-gray-700/50 h-1.5 rounded-full overflow-hidden">
+                                        <div
+                                            class="h-full bg-gradient-to-r from-green-400 to-emerald-400 w-[80%] transform origin-left scale-x-0 animate-skill-bar">
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-gray-400 mt-1">80%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Git -->
+                        <div class="skill-card group" data-aos="zoom-in" data-aos-delay="550">
+                            <div
+                                class="relative bg-white/5 backdrop-blur-lg rounded-lg p-4 border border-white/10 hover:border-red-500/50 transition-all duration-300 overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-red-500/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <div class="relative z-10 flex flex-col items-center">
+                                    <i
+                                        class="fab fa-git-alt text-3xl text-red-400 mb-2 transform group-hover:scale-110 transition-transform duration-300"></i>
+                                    <h3 class="text-sm font-semibold text-gray-200 mb-2">Git</h3>
+                                    <div class="w-full bg-gray-700/50 h-1.5 rounded-full overflow-hidden">
+                                        <div
+                                            class="h-full bg-gradient-to-r from-red-400 to-orange-400 w-[88%] transform origin-left scale-x-0 animate-skill-bar">
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-gray-400 mt-1">88%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tailwind CSS -->
+                        <div class="skill-card group" data-aos="zoom-in" data-aos-delay="600">
+                            <div
+                                class="relative bg-white/5 backdrop-blur-lg rounded-lg p-4 border border-white/10 hover:border-cyan-500/50 transition-all duration-300 overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <div class="relative z-10 flex flex-col items-center">
+                                    <i
+                                        class="fab fa-css3 text-3xl text-cyan-400 mb-2 transform group-hover:scale-110 transition-transform duration-300"></i>
+                                    <h3 class="text-sm font-semibold text-gray-200 mb-2">Tailwind</h3>
+                                    <div class="w-full bg-gray-700/50 h-1.5 rounded-full overflow-hidden">
+                                        <div
+                                            class="h-full bg-gradient-to-r from-cyan-400 to-blue-400 w-[90%] transform origin-left scale-x-0 animate-skill-bar">
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-gray-400 mt-1">90%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bootstrap -->
+                        <div class="skill-card group" data-aos="zoom-in" data-aos-delay="650">
+                            <div
+                                class="relative bg-white/5 backdrop-blur-lg rounded-lg p-4 border border-white/10 hover:border-purple-500/50 transition-all duration-300 overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <div class="relative z-10 flex flex-col items-center">
+                                    <i
+                                        class="fab fa-bootstrap text-3xl text-purple-400 mb-2 transform group-hover:scale-110 transition-transform duration-300"></i>
+                                    <h3 class="text-sm font-semibold text-gray-200 mb-2">Bootstrap</h3>
+                                    <div class="w-full bg-gray-700/50 h-1.5 rounded-full overflow-hidden">
+                                        <div
+                                            class="h-full bg-gradient-to-r from-purple-400 to-indigo-400 w-[85%] transform origin-left scale-x-0 animate-skill-bar">
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-gray-400 mt-1">85%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Laravel -->
+                        <div class="skill-card group" data-aos="zoom-in" data-aos-delay="700">
+                            <div
+                                class="relative bg-white/5 backdrop-blur-lg rounded-lg p-4 border border-white/10 hover:border-red-500/50 transition-all duration-300 overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-red-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <div class="relative z-10 flex flex-col items-center">
+                                    <i
+                                        class="fab fa-laravel text-3xl text-red-400 mb-2 transform group-hover:scale-110 transition-transform duration-300"></i>
+                                    <h3 class="text-sm font-semibold text-gray-200 mb-2">Laravel</h3>
+                                    <div class="w-full bg-gray-700/50 h-1.5 rounded-full overflow-hidden">
+                                        <div
+                                            class="h-full bg-gradient-to-r from-red-400 to-pink-400 w-[80%] transform origin-left scale-x-0 animate-skill-bar">
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-gray-400 mt-1">80%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TypeScript -->
+
+
+                        <!-- WordPress -->
+                        <div class="skill-card group" data-aos="zoom-in" data-aos-delay="800">
+                            <div
+                                class="relative bg-white/5 backdrop-blur-lg rounded-lg p-4 border border-white/10 hover:border-blue-500/50 transition-all duration-300 overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <div class="relative z-10 flex flex-col items-center">
+                                    <i
+                                        class="fab fa-wordpress text-3xl text-blue-400 mb-2 transform group-hover:scale-110 transition-transform duration-300"></i>
+                                    <h3 class="text-sm font-semibold text-gray-200 mb-2">WordPress</h3>
+                                    <div class="w-full bg-gray-700/50 h-1.5 rounded-full overflow-hidden">
+                                        <div
+                                            class="h-full bg-gradient-to-r from-blue-400 to-cyan-400 w-[85%] transform origin-left scale-x-0 animate-skill-bar">
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-gray-400 mt-1">85%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
+
+
+        </footer>
+
+        <!-- Projects Section -->
+        <section id="projects" class="min-h-screen py-24 relative overflow-hidden">
+            <!-- Background Effects -->
+            <div class="absolute inset-0">
+                <div
+                    class="absolute w-[800px] h-[800px] -left-40 -top-40 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-full filter blur-3xl animate-blob">
+                </div>
+                <div
+                    class="absolute w-[600px] h-[600px] right-0 top-1/2 bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-orange-500/10 rounded-full filter blur-3xl animate-blob animation-delay-2000">
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+                <!-- Section Header -->
+                <div class="text-center mb-16">
+                    <span
+                        class="px-4 py-2 rounded-full text-sm font-medium bg-blue-500/10 text-blue-400 inline-block mb-4">
+                        Showcase
+                    </span>
+                    <h2
+                        class="text-4xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                        Featured Projects
+                    </h2>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+                    <!-- E-commerce Platform -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative bg-white/5 backdrop-blur-xl rounded-xl p-6 border border-white/10 
+                                hover:border-blue-500/50 transition-all duration-500">
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h3 class="text-xl font-bold text-gray-200">University SIWES Platform</h3>
+                                        <p class="text-purple-400">Full Stack Application</p>
+                                    </div>
+                                    <a href="https://siwes.nsuk.edu.ng/" class="text-blue-400 hover:text-blue-300 transition-colors">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-400 rounded-md">Bootstrap</span>
+                                    <span
+                                        class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-400 rounded-md">MySQL</span>
+                                    <span
+                                        class="px-2 py-1 text-xs font-medium bg-pink-500/10 text-pink-400 rounded-md">PHP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative bg-white/5 backdrop-blur-xl rounded-xl p-6 border border-white/10 
+                                hover:border-blue-500/50 transition-all duration-500">
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h3 class="text-xl font-bold text-gray-200">VTU Website</h3>
+                                        <p class="text-purple-400">Full Stack Application</p>
+                                    </div>
+                                    <a href="https://tysub.com.ng/"
+                                        class="text-blue-400 hover:text-blue-300 transition-colors">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-400 rounded-md">Tailwind</span>
+                                    <span
+                                        class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-400 rounded-md">React</span>
+                                    <span
+                                        class="px-2 py-1 text-xs font-medium bg-pink-500/10 text-pink-400 rounded-md">threejs</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Chat Platform -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative bg-white/5 backdrop-blur-xl rounded-xl p-6 border border-white/10 
+                                hover:border-purple-500/50 transition-all duration-500">
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h3 class="text-xl font-bold text-gray-200">AI Chat Platform</h3>
+                                        <p class="text-purple-400">Real-time Application</p>
+                                    </div>
+                                    <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-400 rounded-md">React
+                                        & Tailwind</span>
+                                    <span
+                                        class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-400 rounded-md">OpenAI</span>
+                                    <span
+                                        class="px-2 py-1 text-xs font-medium bg-pink-500/10 text-pink-400 rounded-md">Firebase</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Website -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="300">
+                        <div class="relative bg-white/5 backdrop-blur-xl rounded-xl p-6 border border-white/10 
+                                hover:border-pink-500/50 transition-all duration-500">
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h3 class="text-xl font-bold text-gray-200">Portfolio Website</h3>
+                                        <p class="text-purple-400">Frontend Project</p>
+                                    </div>
+                                    <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-400 rounded-md">HTML</span>
+                                    <span
+                                        class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-400 rounded-md">Tailwind</span>
+                                    <span
+                                        class="px-2 py-1 text-xs font-medium bg-pink-500/10 text-pink-400 rounded-md">JavaScript</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20" data-aos="fade-up" data-aos-duration="1000">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold mb-4 gradient-text">Get In Touch</h2>
+                    <p class="text-gray-400">Let's create something amazing together</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Contact Info -->
+                    <div class="space-y-8">
+                        <div
+                            class="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 transform hover:scale-105 transition-all duration-300">
+                            <div class="flex items-center space-x-4">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-envelope text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-white mb-1">Email</h3>
+                                    <a href="mailto:jinawatitus387@gmail.com"
+                                        class="text-gray-400 hover:text-blue-400 transition-colors">jinawatitus387@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 transform hover:scale-105 transition-all duration-300">
+                            <div class="flex items-center space-x-4">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-white mb-1">Location</h3>
+                                    <p class="text-gray-400">Abuja, Nigeria</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form action="https://formspree.io/f/xqakdrrl" method="POST" id="contactForm"
+                        class="space-y-6 bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10">
+                        <!-- Keep your existing form fields exactly as they are -->
+                        <div class="relative group">
+                            <input type="text" id="name" name="name" required class="w-full bg-white/5 rounded-lg border border-white/10 px-4 py-3 text-white outline-none focus:border-blue-500 transition-all duration-300
+                                          peer placeholder-transparent">
+                            <label for="name" class="absolute left-4 -top-2.5 text-sm text-gray-400 bg-[#0f172a] px-2 
+                                          transition-all duration-300 peer-placeholder-shown:top-3.5 
+                                          peer-placeholder-shown:text-base peer-focus:-top-2.5 peer-focus:text-sm
+                                          peer-focus:text-blue-500">
+                                Your Name
+                            </label>
+                        </div>
+
+                        <div class="relative group">
+                            <input type="email" id="email" name="email" required class="w-full bg-white/5 rounded-lg border border-white/10 px-4 py-3 text-white outline-none focus:border-blue-500 transition-all duration-300
+                                      peer placeholder-transparent">
+                            <label for="email" class="absolute left-4 -top-2.5 text-sm text-gray-400 bg-[#0f172a] px-2 
+                                      transition-all duration-300 peer-placeholder-shown:top-3.5 
+                                      peer-placeholder-shown:text-base peer-focus:-top-2.5 peer-focus:text-sm
+                                      peer-focus:text-blue-500">
+                                Your Email
+                            </label>
+                        </div>
+
+                        <div class="relative group">
+                            <textarea id="message" name="message" rows="4" required class="w-full bg-white/5 rounded-lg border border-white/10 px-4 py-3 text-white outline-none focus:border-blue-500 transition-all duration-300
+                                         peer placeholder-transparent"></textarea>
+                            <label for="message" class="absolute left-4 -top-2.5 text-sm text-gray-400 bg-[#0f172a] px-2 
+                                      transition-all duration-300 peer-placeholder-shown:top-3.5 
+                                      peer-placeholder-shown:text-base peer-focus:-top-2.5 peer-focus:text-sm
+                                      peer-focus:text-blue-500">
+                                Your Message
+                            </label>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full group relative inline-flex items-center justify-center px-8 py-3 font-medium tracking-wide text-white transition-all duration-500 ease-in-out bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg overflow-hidden hover:scale-105">
+                            <span
+                                class="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-600 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"></span>
+                            <span class="relative flex items-center gap-2">
+                                Send Message
+                                <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="relative py-20 overflow-hidden bg-black/20">
+            <!-- Background Effects -->
+            <div class="absolute inset-0">
+                <div
+                    class="absolute w-[800px] h-[800px] -left-40 bottom-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-full filter blur-3xl">
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+                <!-- Footer Content -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <!-- Contact Info -->
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold text-gray-200">Contact</h3>
+                        <div class="space-y-2">
+                            <a href="mailto:your.email@example.com"
+                                class="flex items-center space-x-2 text-gray-400 hover:text-purple-400 transition-colors">
+                                <i class="fas fa-envelope"></i>
+                                <span>jinawatitus387@gmail.com</span>
+                            </a>
+                            <a href="tel:+2348089230260"
+                                class="flex items-center space-x-2 text-gray-400 hover:text-purple-400 transition-colors">
+                                <i class="fas fa-phone"></i>
+                                <span>+2348089230260</span>
+                            </a>
+                            <p class="flex items-center space-x-2 text-gray-400">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Abuja Nigeria</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold text-gray-200">Connect</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/jinawa-titus-torhile-b31178244/" class="text-gray-400 hover:text-blue-400 transition-colors">
+                                <i class="fab fa-linkedin text-2xl"></i>
+                            </a>
+                            <a href="https://github.com/Jinawalic" class="text-gray-400 hover:text-purple-400 transition-colors">
+                                <i class="fab fa-github text-2xl"></i>
+                            </a>
+                            <a href="https://facebook.com/jinawa-titus/" class="text-gray-400 hover:text-pink-400 transition-colors">
+                                <i class="fab fa-facebook text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold text-gray-200">Quick Links</h3>
+                        <div class="space-y-2">
+                            <a href="#about"
+                                class="block text-gray-400 hover:text-purple-400 transition-colors">About</a>
+                            <a href="#skills"
+                                class="block text-gray-400 hover:text-purple-400 transition-colors">Skills</a>
+                            <a href="#projects"
+                                class="block text-gray-400 hover:text-purple-400 transition-colors">Projects</a>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter (Optional) -->
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold text-gray-200">Stay Updated</h3>
+                        <form class="space-y-2">
+                            <div class="relative">
+                                <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg 
+                                          focus:outline-none focus:border-purple-500/50 
+                                          text-gray-300 placeholder-gray-500">
+                                <button type="submit" class="absolute right-2 top-1/2 -translate-y-1/2 
+                                           text-purple-400 hover:text-purple-300 transition-colors">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="mt-16 pt-8 border-t border-white/10 text-center">
+                    <p class="text-gray-400">
+                        © 2024 Jinawa Titus Torhile. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Modern Alert Notifications -->
+        <div id="successAlert"
+            class="fixed top-4 right-4 opacity-0 invisible transform translate-y-[-1rem] transition-all duration-500">
+            <div
+                class="bg-white/10 backdrop-blur-xl border border-green-500/20 rounded-lg p-4 flex items-center space-x-4">
+                <div
+                    class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Success!</h3>
+                    <p class="text-gray-300">Your message has been sent successfully.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="errorAlert"
+            class="fixed top-4 right-4 opacity-0 invisible transform translate-y-[-1rem] transition-all duration-500">
+            <div
+                class="bg-white/10 backdrop-blur-xl border border-red-500/20 rounded-lg p-4 flex items-center space-x-4">
+                <div
+                    class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-red-400 to-red-600 rounded-full flex items-center justify-center">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Error!</h3>
+                    <p class="text-gray-300">Oops! Something went wrong. Please try again.</p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const themeToggle = document.getElementById('themeToggle');
+            themeToggle.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+            });
+
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+
+            // Typing effect
+            const texts = ['Full Stack Developer', 'UI/UX Designer', 'Problem Solver', 'Tech Enthusiast'];
+            let count = 0;
+            let index = 0;
+            let isDeleting = false;
+
+            function type() {
+                const currentText = texts[count];
+                const typingElement = document.querySelector('.typing-text');
+                
+                if (!typingElement) {
+                    setTimeout(type, 100);
+                    return;
+                }
+
+                if (isDeleting) {
+                    typingElement.textContent = currentText.substring(0, index - 1);
+                    index--;
+                } else {
+                    typingElement.textContent = currentText.substring(0, index + 1);
+                    index++;
+                }
+
+                let typeSpeed = 100;
+
+                if (isDeleting) {
+                    typeSpeed /= 2;
+                }
+
+                if (!isDeleting && index === currentText.length) {
+                    typeSpeed = 2000;
+                    isDeleting = true;
+                } else if (isDeleting && index === 0) {
+                    isDeleting = false;
+                    count = (count + 1) % texts.length;
+                    typeSpeed = 500;
+                }
+
+                setTimeout(type, typeSpeed);
+            }
+
+            // Start typing effect after a short delay
+            setTimeout(type, 1000);
+
+            // Tech icon tooltip functionality
+            document.querySelectorAll('.tech-icon').forEach(icon => {
+                const tooltip = icon.querySelector('.tooltip');
+                
+                icon.addEventListener('mouseenter', () => {
+                    tooltip.style.visibility = 'visible';
+                    tooltip.style.opacity = '1';
+                    tooltip.style.transform = 'translateY(-10px)';
+                });
+                
+                icon.addEventListener('mouseleave', () => {
+                    tooltip.style.visibility = 'hidden';
+                    tooltip.style.opacity = '0';
+                    tooltip.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Initialize particles.js
+            if (typeof particlesJS !== 'undefined') {
+                particlesJS('particles-js', {
+                    "particles": {
+                        "number": {
+                            "value": 80,
+                            "density": {
+                                "enable": true,
+                                "value_area": 800
+                            }
+                        },
+                        "color": {
+                            "value": "#ffffff"
+                        },
+                        "shape": {
+                            "type": "circle"
+                        },
+                        "opacity": {
+                            "value": 0.5,
+                            "random": false
+                        },
+                        "size": {
+                            "value": 3,
+                            "random": true
+                        },
+                        "line_linked": {
+                            "enable": true,
+                            "distance": 150,
+                            "color": "#ffffff",
+                            "opacity": 0.4,
+                            "width": 1
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 6,
+                            "direction": "none",
+                            "random": false,
+                            "straight": false,
+                            "out_mode": "out",
+                            "bounce": false
+                        }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "repulse"
+                            },
+                            "onclick": {
+                                "enable": true,
+                                "mode": "push"
+                            },
+                            "resize": true
+                        }
+                    },
+                    "retina_detect": true
+                });
+            } else {
+                console.warn('Particles.js library not loaded');
+            }
+
+            // Skill bar animation
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.width = entry.target.getAttribute('data-width');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.skill-bar .bg-gradient-to-r').forEach(bar => {
+                bar.style.width = '0';
+                observer.observe(bar);
+            });
+
+            // Track mouse position for shine effect
+            document.querySelectorAll('.skill-icon-container').forEach(container => {
+                container.addEventListener('mousemove', (e) => {
+                    const rect = container.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    container.style.setProperty('--mouse-x', `${x}px`);
+                    container.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+
+            // Progress bar modal
+            const modal = document.getElementById('progressModal');
+            const modalContent = modal.querySelector('.modal-content');
+            const progressFill = modal.querySelector('.progress-fill');
+            const modalTitle = modal.querySelector('h4');
+            const closeBtn = modal.querySelector('button');
+
+            document.querySelectorAll('.skill-icon-container').forEach(icon => {
+                icon.addEventListener('click', () => {
+                    const skill = icon.dataset.skill;
+                    const percentage = icon.dataset.percentage;
+
+                    modalTitle.textContent = skill;
+                    modal.classList.add('active');
+
+                    // Animate progress bar
+                    setTimeout(() => {
+                        progressFill.style.transform = `scaleX(${percentage / 100})`;
+                    }, 100);
+                });
+            });
+
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('active');
+                progressFill.style.transform = 'scaleX(0)';
+            });
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    progressFill.style.transform = 'scaleX(0)';
+                }
+            });
+
+            document.querySelectorAll('.skill-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / card.clientWidth) * 100;
+                    const y = ((e.clientY - rect.top) / card.clientHeight) * 100;
+                    card.style.setProperty('--mouse-x', `${x}%`);
+                    card.style.setProperty('--mouse-y', `${y}%`);
+                });
+            });
+
+            // Mobile Menu Functionality
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuCloseBtn = document.getElementById('mobileMenuCloseBtn');
+            const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+
+            function toggleMobileMenu() {
+                mobileMenu.classList.toggle('hidden');
+                document.body.classList.toggle('overflow-hidden');
+
+                if (!mobileMenu.classList.contains('hidden')) {
+                    setTimeout(() => {
+                        mobileMenu.classList.add('active');
+                    }, 10);
+                } else {
+                    mobileMenu.classList.remove('active');
+                }
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+            mobileMenuCloseBtn.addEventListener('click', toggleMobileMenu);
+
+            // Close mobile menu when clicking menu items
+            document.querySelectorAll('.mobile-menu-item').forEach(item => {
+                item.addEventListener('click', toggleMobileMenu);
+            });
+
+            // Sync theme toggles
+            mobileThemeToggle.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+            });
+
+            // Close mobile menu on resize if open
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
+                    toggleMobileMenu();
+                }
+            });
+
+            // Handle scroll position for smooth scrolling with fixed header
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Mobile Menu Functionality
+            document.addEventListener('DOMContentLoaded', function () {
+                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                const mobileMenu = document.getElementById('mobileMenu');
+                const mobileMenuCloseBtn = document.getElementById('mobileMenuCloseBtn');
+                const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
+
+                function toggleMobileMenu() {
+                    // Toggle visibility
+                    if (mobileMenu.classList.contains('hidden')) {
+                        // Opening menu
+                        mobileMenu.classList.remove('hidden');
+                        mobileMenu.classList.add('flex');
+                        document.body.style.overflow = 'hidden'; // Prevent scrolling
+
+                        // Animate items after menu is visible
+                        setTimeout(() => {
+                            mobileMenu.classList.add('active');
+                            mobileMenuItems.forEach((item, index) => {
+                                setTimeout(() => {
+                                    item.style.opacity = '1';
+                                    item.style.transform = 'translateY(0)';
+                                }, index * 100);
+                            });
+                        }, 10);
+                    } else {
+                        // Closing menu
+                        mobileMenu.classList.remove('active');
+                        mobileMenuItems.forEach(item => {
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateY(20px)';
+                        });
+
+                        // Wait for animations to finish before hiding
+                        setTimeout(() => {
+                            mobileMenu.classList.add('hidden');
+                            mobileMenu.classList.remove('flex');
+                            document.body.style.overflow = ''; // Restore scrolling
+                        }, 300);
+                    }
+                }
+
+                // Event Listeners
+                mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+                mobileMenuCloseBtn.addEventListener('click', toggleMobileMenu);
+
+                // Close menu when clicking menu items
+                mobileMenuItems.forEach(item => {
+                    item.addEventListener('click', toggleMobileMenu);
+                });
+
+                // Close menu on window resize if open
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
+                        toggleMobileMenu();
+                    }
+                });
+            });
+
+            // Function to show alert
+            function showAlert(alertId) {
+                const alert = document.getElementById(alertId);
+                alert.classList.remove('opacity-0', 'invisible', 'translate-y-[-1rem]');
+                alert.classList.add('opacity-100', 'visible', 'translate-y-0');
+
+                // Auto hide after 3 seconds
+                setTimeout(() => {
+                    alert.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                    alert.classList.add('opacity-0', 'invisible', 'translate-y-[-1rem]');
+                }, 3000);
+            }
+
+            document.getElementById('contactForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                fetch(this.action, {
+                    method: 'POST',
+                    body: new FormData(this),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            showAlert('successAlert');
+                            this.reset(); // Clear the form
+                        } else {
+                            showAlert('errorAlert');
+                        }
+                    })
+                    .catch(() => {
+                        showAlert('errorAlert');
+                    });
+            });
+        </script>
+</body>
+
+
+<!-- Mirrored from emmanuelportfolio-olive.vercel.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Dec 2024 17:44:05 GMT -->
+</html>
