@@ -28,7 +28,7 @@ const About = () => {
           <h2>I bridge the gap between <span className="text-primary">design</span> and <span className="text-primary">engineering</span>.</h2>
 
           <p>
-            With over 3 years of experience, I've developed a keen eye for detail and a love for creating elegant, efficient solutions.
+            With over 4 years of experience, I've developed a keen eye for detail and a love for creating elegant, efficient solutions.
 
             My journey in web development started with curiosity and has evolved into expertise. I specialize in building responsive web applications that provide exceptional user experiences while maintaining robust backend functionality.
 
