@@ -30,7 +30,7 @@ const Navbar = () => {
                 >
                     <a href="#">
                         <span className="logo-dot"></span>
-                        PORTFOLIO
+                        Jinawa Titus
                     </a>
                 </motion.div>
 
