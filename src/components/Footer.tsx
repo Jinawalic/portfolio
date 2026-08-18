@@ -11,7 +11,7 @@ const Footer = () => {
             <div className="logo">
               <a href="#">
                 <span className="logo-dot"></span>
-                PORTFOLIO
+                JINAWA TITUS TORHILE
               </a>
             </div>
             <p>Elevating digital experiences through elite craftsmanship.</p>
