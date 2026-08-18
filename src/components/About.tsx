@@ -93,7 +93,6 @@ const About = () => {
         .image-wrapper img {
           width: 100%;
           border-radius: 24px;
-          box-shadow: 0 30px 60px rgba(0,0,0,0.1);
           filter: grayscale(20%);
           transition: var(--transition-slow);
         }
